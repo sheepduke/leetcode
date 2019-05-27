@@ -1,3 +1,5 @@
+package p771
+
 import kotlin.test.assertEquals
 
 /**
