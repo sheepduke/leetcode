@@ -60,6 +60,6 @@ private fun assertSingle(l1: ListNode, l2: ListNode, expected: ListNode) {
 }
 
 fun main() {
-//    assertSingle(makeListNode(2, 4, 3), makeListNode(5, 6, 4), makeListNode(7, 0, 8))
+    assertSingle(makeListNode(2, 4, 3), makeListNode(5, 6, 4), makeListNode(7, 0, 8))
     assertSingle(makeListNode(9), makeListNode(1, 9, 9), makeListNode(0, 0, 0, 1))
 }

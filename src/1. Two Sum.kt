@@ -1,6 +1,5 @@
 package p1
 
-import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 /**
