@@ -10,3 +10,11 @@
 #include <cassert>
 
 using namespace std;
+
+template<class T>
+void print(const T &collection) {
+  for (auto item: collection) {
+    cout << item << " ";
+  }
+  cout << endl;
+}
