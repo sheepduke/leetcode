@@ -18,3 +18,26 @@ void print(const T &collection) {
   }
   cout << endl;
 }
+
+struct ListNode {
+  int val;
+  ListNode *next;
+  ListNode(int x) : val(x), next(NULL) {}
+};
+
+void print(ListNode *node) {
+  if (!node) {
+    cout << "NULL" << endl;
+    return;
+  }
+
+  cout << node->val;
+
+  node = node->next;
+  while (node) {
+    cout << "->" << node->val;
+    node = node->next;
+  }
+
+  cout << endl;
+}
