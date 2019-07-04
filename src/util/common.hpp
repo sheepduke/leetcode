@@ -25,19 +25,27 @@ struct ListNode {
   ListNode(int x) : val(x), next(NULL) {}
 };
 
-void print(ListNode *node) {
-  if (!node) {
-    cout << "NULL" << endl;
-    return;
+ListNode *make_list(const vector<int> &values) {
+  auto head = ListNode(0);
+  auto node = &head;
+  for (auto value: values) {
+    node->next = new ListNode(value);
+    node = node->next;
   }
+  return head.next;
+}
 
-  cout << node->val;
+ostream &operator <<(ostream &out, ListNode *node) {
+  if (!node) {
+    out << "NULL";
+  }
+  out << node->val;
 
   node = node->next;
   while (node) {
-    cout << "->" << node->val;
+    out << "->" << node->val;
     node = node->next;
   }
 
-  cout << endl;
+  return out;
 }

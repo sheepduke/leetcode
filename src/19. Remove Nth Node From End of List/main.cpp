@@ -52,8 +52,8 @@ int main() {
     node = node->next;
   }
 
-  print(head);
+  cout << head << endl;
   solution.removeNthFromEnd(head, 2);
-  print(head);
+  cout << head << endl;
   return 0;
 }
