@@ -11,14 +11,6 @@
 
 using namespace std;
 
-template<class T>
-void print(const T &collection) {
-  for (auto item: collection) {
-    cout << item << " ";
-  }
-  cout << endl;
-}
-
 struct ListNode {
   int val;
   ListNode *next;
@@ -35,7 +27,7 @@ ListNode *make_list(const vector<int> &values) {
   return head.next;
 }
 
-ostream &operator <<(ostream &out, ListNode *node) {
+ostream &operator <<(ostream &out, const ListNode *node) {
   if (!node) {
     out << "NULL";
   }
@@ -48,4 +40,28 @@ ostream &operator <<(ostream &out, ListNode *node) {
   }
 
   return out;
+}
+
+template <class T>
+ostream &print(ostream &out, const T &thing) {
+  auto it = begin(thing);
+  if (it != end(thing)) {
+    out << *it;
+    it++;
+    while (it != end(thing)) {
+      out << ", " << *it;
+      it++;
+    }
+  }
+  return out;
+}
+
+template<class T>
+ostream &operator <<(ostream &out, const deque<T> &container) {
+  return print(out, container);
+}
+
+template<class T>
+ostream &operator <<(ostream &out, const vector<T> &container) {
+  return print(out, container);
 }
