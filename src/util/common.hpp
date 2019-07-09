@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <numeric>
 #include <vector>
+#include <list>
 #include <stack>
 #include <queue>
 #include <map>
@@ -63,5 +64,10 @@ ostream &operator <<(ostream &out, const deque<T> &container) {
 
 template<class T>
 ostream &operator <<(ostream &out, const vector<T> &container) {
+  return print(out, container);
+}
+
+template<class T>
+ostream &operator <<(ostream &out, const list<T> &container) {
   return print(out, container);
 }
