@@ -75,3 +75,9 @@ template<class T>
 ostream &operator <<(ostream &out, const list<T> &container) {
   return print(out, container);
 }
+
+template <class T, class U>
+ostream &operator <<(ostream &out, const pair<T, U> &pair) {
+  out << "(" << pair.first << ", " << pair.second << ")";
+  return out;
+}
