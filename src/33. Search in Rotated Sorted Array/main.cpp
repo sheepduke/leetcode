@@ -79,11 +79,11 @@ int main() {
 
   auto nums = vector<int>{4, 5, 6, 7, 0, 1, 2};
 
-  // assert(solution.search(nums, 0) == 4);
-  // assert(solution.search(nums, 3) == -1);
+  assert(solution.search(nums, 0) == 4);
+  assert(solution.search(nums, 3) == -1);
   assert(solution.search({1}, 0) == -1);
-  // assert(solution.search({1, 3}, 0) == -1);
-  // assert(solution.search({5, 1, 3}, 5) == 0);
+  assert(solution.search({1, 3}, 0) == -1);
+  assert(solution.search({5, 1, 3}, 5) == 0);
   
   return 0;
 }
