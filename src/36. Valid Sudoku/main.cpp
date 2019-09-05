@@ -66,7 +66,9 @@ public:
     for (auto row = 0; row < 9; row++) {
       block.clear();
       for (auto col = 0; col < 9; col++) {
-        block.push_back(board[row][col]);
+        if (board[row][col] != '.') {
+          block.push_back(board[row][col]);
+        }
       }
       if (!is_block_valid(block)) {
         return false;
@@ -75,7 +77,9 @@ public:
     for (auto col = 0; col < 9; col++) {
       block.clear();
       for (auto row = 0; row < 9; row++) {
-        block.push_back(board[row][col]);
+        if (board[row][col] != '.') {
+          block.push_back(board[row][col]);
+        }
       }
       if (!is_block_valid(block)) {
         return false;
