@@ -81,3 +81,19 @@ ostream &operator <<(ostream &out, const pair<T, U> &pair) {
   out << "(" << pair.first << ", " << pair.second << ")";
   return out;
 }
+
+template <class T>
+ostream &operator <<(ostream & out, const vector<vector<T>> &board) {
+  for (auto row: board) {
+    for (auto element: row) {
+      out << element << " ";
+    }
+    out << endl;
+  }
+  return out;
+}
+
+template <class T>
+ostream &operator <<(ostream &out, const set<T> container) {
+  return print(out, container);
+}
