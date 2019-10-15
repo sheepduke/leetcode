@@ -24,30 +24,17 @@ Explanation: You will always arrive at index 3 no matter what. Its maximum
 class Solution {
 public:
   bool canJump(vector<int>& nums) {
-    if (nums.size() < 2) {
-      return true;
+    auto steps = 1;
+    for (int index = nums.size() - 2; index >= 0; index--) {
+      if (nums[index] >= steps) {
+        steps = 1;
+      }
+      else {
+        steps++;
+      }
     }
 
-    auto index = size_t(0);
-    while (index < nums.size()) {
-      if (nums[index] == 0) {
-        return false;
-      }
-      if (index + nums[index] >= nums.size() - 1) {
-        return true;
-      }
-      auto max_jump_length = 0;
-      auto jump_step = 0;
-      for (auto i = 1; i <= nums[index]; i++) {
-        auto jump_length = i + nums[index + i];
-        if (jump_length > max_jump_length) {
-          max_jump_length = jump_length;
-          jump_step = i;
-        }
-      }
-      index += jump_step;
-    }
-    return true;
+    return steps == 1;
   }
 };
 
@@ -61,6 +48,9 @@ int main() {
   assert(!solution.canJump(nums));
 
   nums = {2, 5, 0, 0, 0};
+  assert(solution.canJump(nums));
+
+  nums = {0};
   assert(solution.canJump(nums));
 
   return 0;
