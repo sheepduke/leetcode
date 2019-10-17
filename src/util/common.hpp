@@ -9,6 +9,7 @@
 #include <map>
 #include <set>
 
+#include <sstream>
 #include <optional>
 
 #include <climits>
