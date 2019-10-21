@@ -95,6 +95,14 @@ ostream &operator <<(ostream & out, const vector<vector<T>> &board) {
 }
 
 template <class T>
-ostream &operator <<(ostream &out, const set<T> container) {
+ostream &operator <<(ostream &out, const set<T> &container) {
   return print(out, container);
+}
+
+template <class T, class U>
+ostream &operator <<(ostream &out, const map<T, U> &container) {
+  for (auto pair: container) {
+    out << pair.first << " => " << pair.second << endl;
+  }
+  return out;
 }
