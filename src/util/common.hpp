@@ -17,6 +17,10 @@
 
 using namespace std;
 
+// ----------------------------------------------------------------------
+//  ListNode
+// ----------------------------------------------------------------------
+
 struct ListNode {
   int val;
   ListNode *next;
@@ -47,6 +51,23 @@ ostream &operator <<(ostream &out, const ListNode *node) {
 
   return out;
 }
+
+bool operator ==(const ListNode &a, const ListNode &b) {
+  auto *head = &a;
+  auto *other = &b;
+  while (head && other) {
+    if (head->val != other->val) {
+      return false;
+    }
+    head = head->next;
+    other = other->next;
+  }
+  return (!head && !other);
+}
+
+// ----------------------------------------------------------------------
+//  ostream
+// ----------------------------------------------------------------------
 
 template <class T>
 ostream &print(ostream &out, const T &thing) {
